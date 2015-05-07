@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- customID type: 1. widget 2. serve 3. default-->
+<default_layout ver="1.0">
+  <!--shortcutgroup id = "0" locate="sidebar">
+		<item id="0" name="play商店" pkgname="com.android.vending;com.android.vending.AssetBrowserActivity;com.moto.mobile.appstore;*market"/>
+		<item id="1" name="短信" pkgname="com.android.mms;com.android.mms.ui.ConversationList;com.sonyericsson.conversations;com.sonyericsson.conversations.ui.ConversationListActivity;com.motorola.blur.messaging;com.motorola.blur.conversations;*mms"/>
+		<item id="2" name="联系人" pkgname="com.android.contacts;com.android.contacts.DialtactsContactsEntryActivity;com.android.htccontacts;com.android.htccontacts.ContactsTabActivity;com.sec.android.app.contacts.PhoneBookTopMenuActivity;com.sonyericsson.android.socialphonebook;com.sonyericsson.android.socialphonebook.SocialPhonebookActivity;*contacts" image="contacts.png"/>
+		<item id="3" name="浏览器" pkgname="com.google.android.browser;com.android.browser;com.android.browser.BrowserActivity" image="browser.png"/>
+	
+	</shortcutgroup>
+-->
+<!--
+  <widget customID="widget" locate="workspace" desktop="false" width="324" height="324" locate_value="0" cellX="0" cellY="1" spanx="4" spany="3" id="0" name="3D时钟;3D時鐘;3D Clock" apkname="iLoongClock.apk" pkgname="com.iLoong.Clock" image="clock.png" />
+  <widget customID="widget" locate="workspace" desktop="false" width="210" height="210" locate_value="0" spanx="2" spany="2" id="0" name="3D便笺;3D便箋;3D Memo" apkname="iLoongMemo.apk" pkgname="com.iLoong.Memo" image="note.png" />
+  <widget customID="widget" locate="workspace" desktop="false" width="210" height="255" locate_value="2" cellX="1" cellY="2" spanx="2" spany="2" id="0" name="3D机器人;3D機器人;3D Robot" apkname="iLoongRobot.apk" pkgname="com.iLoong.Robot" image="robot.png" />
+-->
+  <!-- 	<syswidget -->
+  <!-- 		packageName="com.gau.go.launcherex.gowidget.taskmanagerex" -->
+  <!--         className="com.gau.go.launcherex.gowidget.taskmanagerex.widget.Appwidget41Provider" -->
+  <!--         screen="4" -->
+  <!--         cellX="0" -->
+  <!--         cellY="0" -->
+  <!--         spanX="4" -->
+  <!--         spanY="1" /> -->
+  <!--shortcutgroup id = "1" locate="workspace" locate_value="0">
+		<item id="0" cellX="0" cellY="0" name="音乐" pkgname="com.android.music;com.google.android.music;com.android.music.MusicBrowserActivity;com.htc.music;com.htc.music.HtcMusic;com.sec.android.app.music;com.sec.android.app.music.list.activity.MpMainTabActivity;com.android.music.list.activity.MpMainTabActivity;com.sonyericsson.music;com.miui.player" image="music.png"/>
+		<item id="1" cellX="1" cellY="0" name="相机" pkgname="com.google.android.camera;com.android.camera;com.motorola.Camera;com.motorola.Camera.Camera;com.android.camera.CameraEntry;com.sec.android.app.camera;com.sec.android.app.camera.Camera;com.android.camera.Camera;com.sonyericsson.android.camera;com.sonyericsson.android.camera.CameraActivity;*camera" image="camera.png"/>
+		<item id="2" cellX="2" cellY="0" name="图库" pkgname="com.google.android.gallery3d;com.cooliris.media;com.cooliris.media.Gallery;com.htc.album;com.htc.album.AlbumTabSwitchActivity;com.google.android.gallery3d;com.cooliris.media.Gallery;com.sonyericsson.album;*gallery" image="gallery.png"/>
+		<item id="3" cellX="3" cellY="0" name="设置" pkgname="com.android.settings;com.android.settings.Settings;com.android.settings.framework.activity.HtcSettings;*setting" image="settings.png"/>
+	</shortcutgroup-->
+  <!-- set mainmenu special icon function.
+						
+			element sort:
+			1: <title> 2:<apk name> 3:<package name> 4:<custom ID> 5:<component name(for launch app)>
+		-->
+  <!-- e_0="酷易网游" e_1="Cooeemmo.apk" e_2="com.cooee.gameCenter" e_3="server" e_4="com.cooee.gameCenter.AssistActivity" -->
+  <!-- e_0="酷易市场" e_1="CooeeAppStore.apk" e_2="com.cooee.store" e_3="server" e_4="com.cooee.store.AppStoreActivity" -->
+  <!--  -->
+  <!--mm_settting
+			
+			e_0="default" e_1="default" e_2="default" e_3="default" e_4="default"
+		/-->
+  <!-- 一般的配置说明
+		default_explorer：底边栏浏览器的默认打开方式（底边栏hotseatIntent="*BROWSER*"时作用），需填写默认浏览器的包名（如欧鹏浏览器填写"com.oupeng.mini.android"），填写"nothing"为无默认打开方式
+		default_uri：指定底边栏浏览器的默认网址（底边栏hotseatIntent="*BROWSER*"时作用），需填写"http://"开头的网址，填写"nothing"为百度首页(欧鹏浏览器不支持空白网址)
+		mainmenu_explorers_use_default_uri：是否主菜单里的所有浏览器都用default_uri作为主页(不可更改)：true为使用，false为不使用（用户可更改）
+		install_change_wallpaper：安装launcher时是否更换壁纸： true为更换， false为不更换
+		mainmenu_addbackgroud：主菜单界面是否添加背景： true为添加， false为不添加
+		ThirdAPK_add_background： 第三方图标是否添加背景框，false为不添加，true为添加，目前仅仅在华勤版本上是设定为True的
+		hide_online_theme_button：在更换主题界面是否隐藏“在线主题”按钮： true为隐藏，false为不隐藏
+		anti_aliasing：是否打开抗锯齿： true为开启，false为关闭 （注意：只针对320480及以下分辨率的屏幕作用。目前开启后图标会变模糊）
+		enable_scroll_to_widget：主菜单是否支持应用与插件的相互切页：true为支持，false为不支持(当hide_mainmenu_widget为true时该配置无效)
+		hide_add_shortcut_dialog：（成尔定制需求）是否隐藏“添加到主屏幕”界面： true为隐藏（即不弹出，直接弹出“选择壁纸”），false为不隐藏
+		dispose_cell_count：是否支持指定主菜单行列数：true为支持，false为不支持
+		cellCountX和cellCountY：分别用以指定列数和行数（dispose_cell_count为true时作用）
+		appbar_no_menu：是否去掉主菜单右上角的menu按钮：true为去掉，false为不去掉
+		appbar_bag_icon：是否将箭头图标改为提包图标：true为改，false为不改	
+		default_workspace_pagecount_min：最小页面数量,最小为1
+		default_workspace_pagecounts：默认页面数量,最大数量为9，最小为default_workspace_pagecount_min页
+		default_home_page：指定launcher启动时的桌面当前页（范围0~(default_workspace_pagecounts-1) 0表示第一页）
+		disable_shake_wallpaper：是否关闭甩壁纸功能：ture为关闭，false为不关闭	
+		icon_title_font：设置icon文字大小
+		show_page_edit_on_key_back：桌面按返回键是否弹出屏幕编辑界面：true为弹出，false为不弹出
+		disable_x_effect：是否关闭主菜单切屏时的X轴特效：true为关闭，false为不关闭
+		enable_icon_effect：是否打开图标点击效果：true为打开，false为关闭
+		loadapp_in_background：true启动进度框先消失，后台加载主菜单；false加载完主菜单之后，启动进度框消失
+		mainmenu_page_effect_id：设置主菜单默认切页特效（0~11 默认2）
+		desktop_page_effect_id：设置桌面默认切页特效（0~9 默认9）
+		display_widget_preview_hole：小组件图标是否显示边框。false为不显示，true为显示
+		<已无效>default_S3_theme：默认是否为S3主题：true为默认S3主题，false为默认其它主题
+		setupmenu_show_theme：桌面菜单是否显示主题：true为显示主题，false为显示软件管理
+		custom_wallpapers_path：客户可配置的桌面壁纸路径，如"/system/wallpapers"，再在该路径下放置客户的壁纸图片，填"nothing"为无配置
+		custom_default_wallpaper_name：客户可配置的默认壁纸路径，如"/system/default.jpg"，填"nothing"为无配置
+		custom_virtual_path：客户可配置的虚图标的图片资源路径，如"/system/virtual"，填"nothing"为无配置
+		custom_virtual_download_path：客户可配置的虚图标的下载路径，如"/system/download"，填"nothing"为无配置
+		custom_sys_shortcut_path：客户可配置的系统快捷方式图标路径，如"/system/shortcut"，填"nothing"为无配置
+		app_icon_size: 配置图标的大小，默认为72（华勤需求85）
+		thirdapk_icon_scaleFactor: 第三方图标的缩放百分比，默认为100（华勤需求70）
+		show_progress_dialog：加载桌面时是否显示提示框：true为显示， false为不显示
+		custom_virtual_icon：点击虚图标，如果应用程序没有安装并且cooee/download目录下没有对应的apk或者没有T卡 ，填"true"为提示用户“SD卡上没有此应用的安装包”，填"false"为提示用户下载
+	    sensor_delay_level：甩手机换墙纸的灵敏度，值越低越灵敏（1~10 默认5）
+	    hide_mainmenu_widget：是否隐藏主菜单的小组件：true为隐藏，false为不隐藏（当该值为true时enable_scroll_to_widget的配置无效）
+	    hide_launcher_wallpapers：桌面长按->选择壁纸时是否隐藏launcher的桌面壁纸菜单：true为隐藏，false为不隐藏（该值为true时custom_wallpapers_path配置无效）
+	 	broadcast_state：是否开启通知栏广播，true为开启（进入idle广播：com.cooee.launcher.action.show_workspace；进入主菜单广播：com.cooee.launcher.action.show_app；退出主界面广播：com.cooee.launcher.action.stop；回到主界面广播：com.cooee.launcher.action.start），false为关闭
+	 	hide_appbar：隐藏主菜单控制条
+	 	widget_title_weight:主菜单widget下面字所占高度比例（比例越大字越大，比例越小字越小,必须在0-1之间）
+	 	appbar_show_userapp_list:点击原来的下载图标，邑丰要求显示下载应用程序图标，和原来的进入 Cooee市场区别。默认为false,进入cooee市场
+	 	show_font_bg：是否显示字的圆角矩形背景（一行显示时）：true为显示
+	 	font_double_line：是否两行显示：true为两行，false为一行（该值为true时show_font_bg配置无效）
+	 	hide_backup_and_restore：是否隐藏备份与恢复桌面：true为隐藏，false为不隐藏
+	 	hotseatbar_browser_special_name：底边栏浏览器是否显示特殊名称：true为“互联网”，false为“浏览器”
+	 	mainmenu_add_black_ground:控制主菜单背景纯黑或者没背景          
+	 	popmenu_style:桌面和主菜单弹出菜单的风格：0为原始风格，1为android4.0风格                                
+	 	click_indicator_enter_pageselect:点击页面指示器进入页面选择器:true为进入，false为无响应 
+	 	workspace_longclick_display_contacts:桌面长按菜单中的联系人项 是否显示。默认为显示 
+	 	hide_desktop_setup:桌面菜单是否去掉桌面设置。true为去掉（该值设为true时popmenu_style强制为1）
+	 	show_widget_shortcut_bg:主菜单的小组件是否显示背景。true为显示                  
+	 	hotseatbar_no_panel:去掉底边栏图标背后的白色方框。true为去掉
+	 -->
+  <general_config anti_aliasing="true" />
+  <!--	
+   <general_config   
+   		default_explorer="nothing"
+        default_uri="nothing"
+        mainmenu_explorers_use_default_uri="false"
+        install_change_wallpaper="true"
+        mainmenu_addbackgroud="false"
+        ThirdAPK_add_background="false"
+        hide_online_theme_button="false"
+        anti_aliasing="false"
+        enable_scroll_to_widget="false"
+        hide_add_shortcut_dialog="false"
+        dispose_cell_count="false" cellCountX="4" cellCountY="4"
+        appbar_no_menu="false"
+        appbar_bag_icon="false"
+        default_workspace_pagecount_min="5"
+        default_workspace_pagecounts="5"
+        default_home_page="0"
+        disable_shake_wallpaper="false"
+        icon_title_font="14"
+        show_page_edit_on_key_back="false"
+        disable_x_effect="false"
+        enable_icon_effect="false"        
+        loadapp_in_background="true"
+        mainmenu_page_effect_id="2"
+        desktop_page_effect_id="9"
+        display_widget_preview_hole="false"
+        default_S3_theme="true"
+        setupmenu_show_theme="true"
+        custom_wallpapers_path="nothing"
+        custom_default_wallpaper_name="nothing"
+        custom_virtual_path="nothing"
+        custom_virtual_download_path="nothing"
+        custom_sys_shortcut_path="nothing"
+        app_icon_size="72"
+        thirdapk_icon_scaleFactor="100"
+		show_progress_dialog="false"
+		custom_virtual_icon="false"
+		sensor_delay_level="5"
+		hide_mainmenu_widget="false"
+		hide_launcher_wallpapers="false"
+		broadcast_state="false"
+		hide_appbar="false"
+		widget_title_weight="0.25"
+		appbar_show_userapp_list="false"
+		show_font_bg="false"
+		font_double_line="false"
+		hide_backup_and_restore="false"
+		hotseatbar_browser_special_name="false"
+		mainmenu_add_black_ground="false"
+		popmenu_style="1"
+		click_indicator_enter_pageselect="true"
+		workspace_longclick_display_contacts="true"
+		hide_desktop_setup="false"
+		show_widget_shortcut_bg="false"
+		hotseatbar_no_panel="false"
+   />
+   -->
+  <!-- 添加系统快捷方式到桌面上的功能-->
+  <!-- 
+	<sys_shortcut
+	name="应用名"
+	packageName="com.android.settings"
+	className="com.android.settings.fuelgauge.PowerUsageSummary"
+	screen="2" cellX="0" cellY="1" image="battery_usage.png"
+	/>
+	 -->
+  <!-- 底边栏配置说明
+
+底边栏目前支持四个，从左到右分别对应的id =0,1,2,3
+hotseatIntent支持显示或者隐式两种配置方式。
+对于支持包名和主件名的Intent必须是系统内置的APK,Intent的配置需要客户提供包名和主件名。
+<hotseat id="3"  hotseatIntent="intent:#Intent;action=android.intent.action.MAIN;component=com.tencent.qqmusic/com.tencent.qqmusic.activity.AppStarterActivity;end" 
+image 为对应的显示图标的名称，在theme/hotseatbar文件夹中
+如果不配置，则用默认的拨号、电话本、信息和浏览器。如果客户需要修改第2个，则可以仅仅配置
+hotseat id="2"的这一条
+<hotseat id="2"  hotseatIntent="intent:#Intent;action=android.intent.action.MAIN;type=vnd.android-dir/mms-sms;end"  
+		image="messaging.png"/>
+-->
+  <!--  
+   <hotseat_config >
+     <hotseat id="0"  hotseatIntent="intent:#Intent;action=android.intent.action.DIAL;end"  
+     image="phone.png"/>
+     
+		<hotseat id="1"  hotseatIntent="intent:content://com.android.contacts/contacts#Intent;action=android.intent.action.VIEW;end"  
+		image="contacts.png"/>
+		
+		<hotseat id="2"  hotseatIntent="intent:#Intent;action=android.intent.action.MAIN;type=vnd.android-dir/mms-sms;end"  
+		image="messaging.png"/>
+		
+		<hotseat id="3"  hotseatIntent="*BROWSER*" 
+		image="browser.png"/>
+	</hotseat_config>
+-->
+  <!-- show_in_applist：可添加的应用，去掉则不显示
+	com.iLoong.launcher.theme.ThemeManagerActivity：主题选择
+	com.iLoong.launcher.theme.ThemeChangeActivity：一键换装
+	 -->
+  <!--show_in_applist>
+	   <show_app pkgname="com.iLoong.launcher.theme.ThemeManagerActivity" />
+	   <show_app pkgname="com.iLoong.launcher.theme.ThemeChangeActivity" />
+	</show_in_applist-->
+  <!-- 替换launcher中出现的图标功能，通过package name定位图标,找到后会替换成指定的图标 
+		-->
+  <!-- 动态图标包名类名配置 -->
+  <!-- 	<dynamicicon name="时钟;日历;天气"  -->
+  <dynamicicon name="时钟;日历;天气" />
+
+    <icon
+        name="联系人"
+        componentName="com.android.htccontacts.BrowseLayerCarouselActivity;com.android.contacts.activities.PeopleActivity;com.android.contacts.DialtactsContactsEntryActivity;com.yulong.android.contacts.ui.main.ContactMainTabActivity;com.lenovo.ideafriend.alias.PeopleActivity;com.yulong.android.contacts.ui.main.ContactMainActivity;com.sec.android.app.contacts.PhoneBookTopMenuActivity;com.sec.android.app.contacts.ContactsEntryActivity;com.oppo.contacts.OppoDialtactsActivity;com.sonyericsson.android.socialphonebook.LaunchActivity;com.kkandroid.contacts.activities.PeopleActivity;com.android.contacts.activities.LauncherContactsActivity;com.lewa.PIM.contacts.activities.ContactsEntryActivity;com.android.htccontacts.ContactsTabActivity;com.snda.ttcontact.ContactActivity;com.android.contacts.ContactsChildTabActivity;com.lewa.PIM.ui.ContactsEntryActivity;com.motorola.blur.contacts.ViewIdentitiesFacetActivity;com.android.contacts.ContactsActivity;com.meizu.mzsnssyncservice.ui.SnsTabActivity;com.tmobile.faves.ui.FavesActivity;com.byd.contacts.MyContacts;com.android.contacts.activities.LenovoStyleActivity;com.android.contacts.MyContacts;com.android.internal.app.ResolverActivity;com.android.contacts.activities.ContactTabBrowserActivity;com.android.contacts.PeopleEntryActivity;jp.co.sharp.android.addressbook.app.ContactsListActivity;com.sec.android.app.latin.launcher.contact.Launcher;com.android.contacts.ContactsListActivity;com.desay.CareBook.CareBookScrollActivity;com.android.contacts.ContactsLaunchActivity;com.cootek.smartdialer.Entrance;com.android.contacts.FakePeopleActivity;com.sec.android.app.contacts.PhoneBookSplitTopMenuActivity;com.iworks.contacts.ContactsListActivity;com.skymobi.icontact.ContactsListActivity;com.yunos.alicontacts.activities.PeopleActivity2"
+        dup="true"
+        image="contacts.png"
+        pkgname="com.android.htccontacts;com.android.contacts;com.yulong.android.contacts;com.lenovo.ideafriend;com.sonyericsson.android.socialphonebook;com.kkandroid.contacts;com.lewa.PIM;com.snda.ttcontact;com.motorola.blur.contacts;com.meizu.mzsnssyncservice;com.tmobile.launcher;com.byd.contacts;com.modoohut.dialer.donate;jp.co.sharp.android.addressbook.app;com.modoohut.dialer;com.sec.android.app.latin.launcher.contact;com.desay.CareBook;com.cootek.smartdialer_oem;com.iworks.contacts;com.skymobi.icontact;com.yunos.alicontacts" />
+
+    <icon
+        name="电话"
+        componentName="com.android.htcdialer.Dialer;com.android.contacts.activities.DialtactsActivity;com.android.contacts.DialtactsActivity;com.android.contacts.PhoneCallDialtactsActivity;com.yulong.android.contacts.dial.DialActivity;com.lenovo.ideafriend.alias.DialtactsActivity;com.sec.android.app.dialertab.DialerTabActivity;com.android.contacts.TwelveKeyDialer;com.sec.android.app.contacts.DialerEntryActivity;com.android.contacts.activities.TwelveKeyDialer;com.oppo.aidial.DialTabActivity;com.android.contacts.activities.ContactsLauncherActivity;com.android.htccontacts.DialerTabActivity;com.sonyericsson.android.socialphonebook.DialerEntryActivity;com.kkandroid.contacts.activities.DialtactsActivity;com.android.htcdialer.DialerActivity;com.snda.ttcontact.DialerActivity;com.android.contacts.dialpad.DialpadActivity;com.android.lc.dialpad.DialpadStarter;com.android.contacts.DialerActivity;com.lewa.PIM.contacts.activities.DialtactsActivity;com.android.contacts.activities.DialpadActivity;com.android.contacts.activities.PCUDialtactsActivity;com.lewa.PIM.ui.DialpadEntryActivity;oms.touchdialer.TouchDialer;com.motorola.dialer.DialtactsContactsEntryActivity;com.android.contacts.DialtactsContactsEntryActivityForDialpad;com.android.dialer.DialtactsActivity;com.android.phone.LaunchCallInterface;com.android.contacts.DialtactsDialpadEntryActivity;com.android.contacts.DialtactsDialerEntryActivity;com.android.contacts.CallDialtactsActivity;com.android.Dialer.Dialer;com.android.contacts.activities.DialerPeopleActivity;com.modoohut.dialer.DialActivity;com.android.contacts.GoToCallActivity;com.android.contacts.activities.PhoneFrontDoor;com.android.contacts.DialtactsEntryActivity;com.android.contacts.CallEntryActivity;com.dianxinos.contacts.DialtactsActivity;com.sec.android.app.latin.launcher.phone.Launcher;com.cootek.smartdialer.TDialer;com.desay.dialer.DialerActivity;com.android.contacts.DialerLauncherActivity;com.android.contacts.dialer.DialerPhoneActivity;com.android.contacts.PhoneContactsActivity;com.skymobi.icontact.DialtactsActivity;com.yunos.alicontacts.activities.DialtactsActivity;com.android.contacts.activities.MyDialtactsActivity;com.android.contacts.LaunchKeyDialerEntryActivity"
+        dup="true"
+        image="phone.png"
+        pkgname="com.android.htcdialer;com.android.contacts;com.yulong.android.contacts.dial;com.lenovo.ideafriend;com.sec.android.app.dialertab;com.oppo.aidial;com.android.htccontacts;com.sonyericsson.android.socialphonebook;com.kkandroid.contacts;com.snda.ttcontact;com.android.contacts.dialpad;com.android.lc.dialpad;com.lewa.PIM;oms.touchdialer;com.motorola.dialer;com.android.dialer;com.android.phone;com.android.Dialer;com.modoohut.dialer.donate;com.modoohut.dialer;com.dianxinos.contacts;com.sec.android.app.latin.launcher.phone;com.cootek.smartdialer_oem;com.desay.dialer;com.skymobi.icontact;com.yunos.alicontacts" />
+
+    <icon
+        name="通话记录"
+        componentName="com.android.htccontacts.ViewCallHistory;com.android.contacts.DialtactsCallLogEntryActivity;com.sec.android.app.contacts.RecntcallEntryActivity;com.yulong.android.recentcalls.activity.TabHostActivity;com.lenovo.ideafriend.alias.callLogsActivity;alias.CallLogEntry;com.android.contacts.activities.CallLogsActivity;com.android.contacts.CallLogLauncherActivity;com.CallLog.CallLogActivity;com.android.contacts.TabedRecentCallsListEntryActivity;com.android.contacts.activities.CallLogActivity;com.android.contacts.DialtactsCallsListEntryActivity;com.android.contacts.DialtactsRecentCallEntryActivity;com.android.contacts.CallLogShortcut;com.android.contacts.RecentCallsLauncherActivity;com.android.contacts.DialtactsCalllogEntryActivity;com.android.contacts.LaunchCallLogActivity;com.skvalex.callrecorder.CallRecorderActivity;com.android.contacts.RecentCallsListActivityTab;com.android.lc.calllog.CalllogStarter;com.android.contacts.CallLog;com.android.contacts.RecentCallsListActivity;com.android.contacts.DialtactsRecentCallsEntryActivity;com.sec.android.app.dialertab.DialerTabDialerActivity;com.android.contacts.activities.RecentCallsActivity;com.motorola.dialer.CallLogShortcut;com.android.contacts.DialtactsContactsEntryActivityForRecentCalls;com.byd.calllog.MyCallLog;com.longcheertel.calllog.CallLog;com.android.phone.RecentCallsListActivity;com.android.contacts.MyCallLogs;com.android.contacts.DialtactsRecentCallsListActivity;com.android.s3calllog.MainActivity;com.android.contacts.DialtactsFavoritesEntryActivity;com.sec.android.app.dialertab.calllog.MainLauncherLogsListActivity;com.android.contacts.DialtactsCallLogsEntryActivity;com.android.contacts.DialtactsRecentEntryActivity;com.android.contacts.CallLogContactsActivity;com.android.contacts.activities.TabCallLogActivity;com.android.contacts.LaunchRecentCallsLogEntryActivity;com.android.contacts.activities.CallLogLauncherActivity;com.android.contacts.DialtactsCallsEntryActivity;com.desay.CareBook.CallLogActivity;com.android.contacts.CallLogActivity;com.android.contacts.activities.CallHistoryActivity;com.android.contacts.RecentCallsEntryActivity;com.android.contacts.RecentCallsListEntryActivity;org.hummingbird.contacts.CallLogActivity;com.android.calllog.CallLog"
+        dup="true"
+        image="callhistroy.png"
+        pkgname="com.android.htccontacts;com.android.contacts;com.yulong.android.callhistory;com.lenovo.ideafriend;com.CallLog;com.skvalex.callrecorder;com.android.lc.calllog;com.sec.android.app.dialertab;com.motorola.dialer;com.byd.calllog;com.longcheertel.calllog;com.android.phone;com.android.s3calllog;com.desay.CareBook;org.hummingbird.contacts;com.android.calllog" />
+
+    <icon
+        name="浏览器"
+        componentName="com.android.browser.BrowserActivity;com.android.browser.GNBrowserActivity;com.sec.android.app.sbrowser.SBrowserMainActivity;mobi.mgeek.TunnyBrowser.BrowserActivity;com.huawei.android.webcustomize.WebCustomize;com.snda.gk.browser.BrowserActivity;com.sec.android.app.sbrowser.OfflinePageActivity;com.android.internet.Internet;com.android.browser.BrowserEnterPage;oms.browser.BrowserActivity;com.android.browser.ComboViewActivity;com.aliyun.mobile.browser.ui.screen.ABrwWebPageScreen;com.android.browser.BrowserLauncher;com.baidu.browser.apps.BrowserActivity;com.android.browserentry.BrowserEntryActivity;com.android.wapbrowser.WapBrowserActivity;com.android.browser.LoginBrowserActivity;com.sec.android.app.latin.launcher.browser.Launcher;com.lenovo.browser.BrowserActivity;com.yulong.android.browser.BrowserStartPage;com.android.browser.BrowserActivity2;com.android.browser.CombinedBookmarkHistoryActivity;com.bw.Internet.Internet;com.zte.browser.MainActivity;com.tencent.mtt.SplashActivity;com.jsr.internet.InternetActivity;com.ume.browser.MainActivity;com.ebensz.browser.BrowserActivity"
+        dup="true"
+        image="browser.png"
+        pkgname="com.android.browser;com.sec.android.app.sbrowser;com.dolphin.browser.tuna;com.huawei.android.webcustomize;com.huawei.android.browser;com.snda.gk.browser;com.android.internet;oms.browser;com.google.android.browser;com.aliyun.mobile.browser;com.baidu.browser.apps_yt;com.android.browserentry;com.android.wapbrowser;com.sec.android.app.latin.launcher.browser;com.lenovo.browser;com.baidu.browser.apps_neo;com.bw.Internet;com.baidu.browser.apps_mr;com.dianxinos.browser;com.zte.browser;com.jsr.internet;com.ume.browser;com.ebensz.browser" />
+
+    <icon
+        name="短信"
+        componentName="com.android.mms.ui.ConversationList;com.android.mms.ui.BootActivity;com.android.mms.ui.ConversationComposer;com.yulong.android.mms.ui.MmsMainListFormActivity;com.lenovo.ideafriend.alias.MmsActivity;com.android.mms.MainUISelection;com.android.mms.ui.MmsTabActivity;com.android.bbkmms.ui.ConversationList;com.android.mms.ui.traditional.MessageLaunchActivity;com.sonyericsson.conversations.ui.ConversationListActivity;com.android.mms.ui.UiController;com.android.mms.ui.ViewControllerActivity;com.konka.Message.ui.BootActivity;com.ahong.base.AhongMmsMain;com.huawei.hotalk.MainActivity;com.lge.message.ui.ConversationList;com.android.mms.ui.FunctionSwitchActivity;com.android.mms.ui.MessageLaunchActivity;com.lewa.PIM.contacts.activities.MessageActivity;com.lewa.PIM.ui.MessageEntryActivity;com.android.mms.ui.MessageTabActivity;com.chocolate.mms.ui.MessageTabActivity;com.motorola.blur.messaging.MessagingActivity;oms.mms.ui.ConversationList;com.jb.mms.ui.ConversationList;com.motorola.messaging.activity.ConversationListActivity;com.android.mms.ui.ModeActivity;com.android.mms.ui.LaunchActivity;com.android.mms.ui.Conversationlistpage;com.android.mms.ui.TabMain;com.android.mms.ui.EntryActivity;com.btb.ums.lg.ui.msgbox.MessageBoxActivity;com.sec.android.app.latin.launcher.message.Launcher;com.pantech.app.mms.ui.EntryActivity;com.kt.mmsclient.ui.ConversationList;com.hskj.iphonemms.ui.ConversationList;com.pantech.app.mms.skt.ui.XnewmessageBox;com.android.contacts.mms.ui.ConversationList;com.android.mms.ui.MmsActivity;com.gionee.mms.ui.MmsSmsTabActivity;com.chuangyu.mms.ui.ConversationList;com.ics.paid.ext.ui.ConversationList;com.android.mmscg94.ui.UiController;com.pantech.app.mms.skt.ui.MMSTopMenu;com.android.mms.ui.MainActivity;com.kt.mmsclient.activity.MainTabActivity;com.lousou.mms.ui.ConversationList;com.iphonestyle.mms.ui.ConversationList;com.android.mms.ui.MessageEntry;com.skymobi.imms.ui.ConversationList;com.yunos.alimms.ui.ConversationList;com.android.mms.ui.MainLayerTabSwitchActivity"
+        dup="true"
+        image="messaging.png"
+        pkgname="com.android.mms;com.lenovo.ideafriend;com.android.bbkmms;com.sonyericsson.conversations;com.konka.Message;com.huawei.message;com.android.contacts;com.lge.message;com.lewa.PIM;com.chocolate.mms;com.motorola.blur.messaging;oms.mms;com.jb.mms;com.motorola.messaging;com.btb.ums;com.sec.android.app.latin.launcher.message;com.pantech.app.mms;com.kt.mmsclient;com.hskj.iphonemms;com.pantech.app.mms.skt;com.chuangyu.mms;com.ics.paid.ext;com.android.mmscg94;com.lousou.mms;com.iphonestyle.mms;com.skymobi.imms;com.yunos.alicontacts" />
+
+    <icon
+        name="音乐"
+        componentName="com.v5music.view.activity.SplashActivity;com.htc.music.HtcMusic;com.android.music.MusicBrowserActivity;com.sec.android.app.music.MusicActionTabActivity;com.android.music.MusicMainActivity;com.android.music.MusicPlayerTab;com.android.mediacenter.PageActivity;com.android.bbkmusic.WidgetToTrackActivity;com.android.music.MusicBrowserTabActivity;com.sec.android.app.music.list.activity.MpMainTabActivity;com.android.music.MusicScanResultActivity;com.miui.player.ui.MusicBrowserActivity;com.oppo.music.MediaPlaybackActivity;com.android.bbkmusic.MusicBrowserActivity;com.android.music.fragment.ListBrowserActivity;com.htc.music.browserlayer.MusicBrowserTabActivity;com.sonyericsson.music.PlayerActivity;com.android.music.list.activity.MpMainTabActivity;com.android.mediacenter.ListBrowserActivity;com.sonyericsson.rrmediadiscovery.MediaLoginActivity;com.baidu.musicplayer.activity.MainFragmentActivity;com.lenovo.music.ui.LeAppLoadingActivity;com.motorola.motmusic.DashboardActivity;com.v5music.YYMusicMain;com.miui.player.drawerActivityGroup.MainActivityGroup;com.motorola.blur.music.DashboardActivity;com.lewa.player.ui.outer.MusicMainEntryActivity;com.android.strengthenmusic.ui.MusicAppStart;com.oppo.music.MusicPagerViewActivity;com.lge.music.MusicBrowserActivity;com.sec.android.app.music.MusicBrowserTabActivity;com.meizu.media.music.MusicMainActivity;com.kphone.music.MusicBrowserActivity;cn.zte.music.MusicBrowserActivity;com.motorola.cmp.HomeListActivity;com.hisense.music.MusicBrowserActivity;com.pantech.app.music.library.MusicLibraryTabHost;cn.com.hedy.music.MusicBrowserActivity;com.android.yzsc.music.MusicBrowserActivity;com.android.music.MusicTabActivity;com.android.music.MainActivity;com.imusic.musicplayer.activity.WelcomeActivity;com.android.dle.sysmedia.splayer.MainActivity;com.app.musicplayer.MusicPlayerActivity;com.android.music.TabActivity;com.android.music.MogooMusicActivity;com.android.music.MusicLogoActivity;arcsoft.android.musicplayer.MainUI;com.sec.android.app.latin.launcher.musicplayer.Launcher;com.hmct.music.MusicBrowserActivity;com.aliyun.music.MusicTabActivity;com.angel.music.MusicAcitivity;com.fihtdc.music.MusicTabActivity;com.duomi.yunos.DMLauncher;com.five.music.MusicPlayerActivity;com.pantech.app.music.skt.library.MusicLibraryList;com.lenovo.leos.lephone.music.MusicMainActivity;com.android.music.MusicPlayerTabActivity;com.lenovo.gemini.musicplayer.MusicPlayerActivity;com.pantech.app.music.MusicStarter;com.kazufukurou.hikiplayer.pro.MainActivityPro;com.android.music.XiaomiAudioPlayerActivity;huawei.com.android.music.MusicActivity;com.android.music.FxMainActivity;com.tchip.AudioPlayer.AudioPlayer;com.sony.walkman.mediaapp.music.activity.MusicTopActivity;com.oppo.music.MainListActivity;com.android.samsung.music.MusicBrowserActivity;com.sunmiyo.music.MusicplayerActivity;com.easyandroid.music.MusicBrowserActivity;com.tsf.shell.widget.music.activity.MusicPlayerActitity;com.android.music.HQMusicMainActivity;com.omusic.eton.EtonRoot"
+        dup="true"
+        image="music.png"
+        pkgname="com.v5music;com.htc.music;com.android.music;com.sec.android.app.music;com.android.mediacenter;com.android.bbkmusic;com.miui.player;com.oppo.music;com.sonyericsson.music;com.sonyericsson.rrmediadiscovery;com.baidu.musicplayer;com.lenovo.music;com.motorola.motmusic;com.v5music;com.motorola.blur.music;com.lewa.player;com.android.strengthenmusic;com.lge.music;com.meizu.media.music;com.kphone.music;cn.zte.music;com.motorola.cmp;com.hisense.music;com.pantech.app.music;cn.com.hedy.music;com.android.yzsc.music;com.imusic.musicplayer;com.android.dle.sysmedia.splayer;com.app.musicplayer;arcsoft.android.musicplayer;com.sec.android.app.latin.launcher.musicplayer;com.hmct.music;com.aliyun.music;com.google.android.music;com.angel.music;com.fihtdc.music;com.duomi.yunos;com.five.music;com.pantech.app.music.skt;com.lenovo.leos.lephone.music;com.lenovo.gemini.musicplayer;com.kazufukurou.hikiplayer.pro;huawei.com.android.music;com.jrtstudio.music;com.tchip.AudioPlayer;com.sony.walkman.mediaplayers.wm;com.android.samsung.music;com.sunmiyo.music;com.easyandroid.music;com.tsf.shell.widget.music;com.omusic.eton" />
+
+    <icon
+        name="视频"
+        componentName="com.mediatek.videoplayer.MovieListActivity;com.huaqin.videoplayer.VideoBrowserActivity;com.android.music.VideoBrowserActivity;com.sec.android.app.videoplayer.activity.MainTab;com.android.VideoPlayer.VideoPlayerActivity;com.android.gallery3d.app.GalleryForVideo;com.android.VideoPlayer.VideoPlayer;com.sec.android.app.videoplayer.activity.VideoList;com.sec.android.app.videoplayer.activity.VPMainTab;com.zte.videoplayer.VideoBrowserActivity;com.samsung.everglades.video.VideoMain;com.android.video.VideoListActivity;com.zte.videoplayer_ZTE.VideoBrowserActivity;com.htc.album.TabPluginDevice.ActivityAllVideos;com.cooliris.media.VideoActivity;com.android.gallery3d.app.VideoGallery;com.android.music.GalleryVideoEntry;com.leadcore.videoplayer.VideoPlayerActivity;com.tyd.android.app.videogallery.activity.VideoList;com.htc.china.videos.LandingPageActivity;com.miui.video.HomeActivity;com.android.gallery3d.app.VideoActivity;com.lenovo.videoplayer.VideoPlayerActivity;com.vivo.video.ui.VivoVideoMainActivity;com.lge.media.LGEVideoList;com.android.video.VideoBrowserActivity;com.cooliris.media.GalleryForVideo;com.android.yepvieoplayer.MovieListActivity;com.baidu.videoplayer.activity.MediaPickerActivity;com.lenovo.videoplayer.MovieListActivity;com.mediatek.mtkvideoplayer.GalleryPicker;com.lge.videoplayer.list.VideoPlayerActivity;com.htc.album.AllVideos;android.app.AliasActivity;com.android.gallery3d.app.VideoBrowserActivity;com.lge.videoplayer.VideoPlayerList;com.wise.movie_player.movie_list;com.yulong.android.gallery3d.app.Gallery;com.mediatek.videoplayer.GalleryPicker;edu.ccut2.VideoBrowser;com.lewa.player.ui.video.VideoBrowserActivity;com.google.android.youtube.videos.honeycomb.VideosActivity;com.tydtech.videogallery.VideoList;oms.video.VideoList;com.kphone.videoplayer.VideoPlayerActivity;cn.com.zte.videoplayer.VideoBrowserActivity;com.mediatek.mtkvideoplayer.ListPicker;com.android.hplayer.LocalVideoList;com.pantech.app.video.ui.playlist.VideoListActivity;com.amoi.videoplayer.VideoPlayerActivity;com.meizu.media.video.VideoMainActivity;com.zte.video.VideoBrowserActivity;com.cooliris.video.media.Gallery;com.lifevibes.lgevideoplayer.LGEVideoList;com.android.rtspplayer.LocalVideoList;com.android.music.VideoActivity;com.android.skymobi.SuperActionActivity;com.pekall.videoplayer.VideoChooseActivity;android.rk.RockVideoPlayer.RockVideoPlayer;com.android.music.VideoList;com.aliyun.videocenter.VideoCenterActivity;com.mediatek.movielist.MovieListActivity;com.mz.video.VideoList;android.rk.RockVideoPlayer.Gallery;com.hisense.VideoGallery;com.oppo.video.VideoListActivity;com.aliyun.video.VideoCenterActivity;com.kttech.video.Video;com.foxlink.videoplayer.GalleryPicker;com.etonnj.VideoActivityShortcut;com.five.videoplayer.VideoListActivity;com.moly.videoplayer.VideoPlayerActivity;com.android.gallery3d.app.galleryforvideo;com.motorola.gallery.LaunchAllVideosActivity;com.lenovo.gemini.videoplayer.VideoPlayer;com.baidu.videoplayer.activity.BaiduVideoPicker;com.huaqin.videoplayer.MovieListActivity;com.um.player.phone.SplashScreenActivity;com.lge.videoplayer.VideoFileList_New;com.android.music.VideoEntryActivity;com.letv.android.client.localplayer.LocalFilesActivity;com.digitalaria.videoplayer.MainActivity;com.android.videos.app.Gallery;android.rk.multi.RkMulitPlayer.RockVideoPlayer;com.mediatek.videoplayer.VideoMainActivity;com.access.videobrowser.VideoBrowserActivity;android.rk.TchipRockVideoPlayer.RockVideoPlayerActivityGroup;com.martini.player.GalleryPicker;com.sony.walkman.mediaapp.video.contentbrowser.ContentBrowserActivity;com.mediatek.videoplayer.BootActivity;com.android.gallery3d.app.MovieBrowserActivity;com.sunmiyo.video.VideoActivity;com.android.VideoPlayer.VideoPlayer_2D;fx.cdrc.videoplayer.FxLoadActivity;com.easyandroid.music.VideoList;com.gionee.video.VideoMainActivity;com.android.hplayer.LocalVideoGrid;com.mediatek.filemanager.VideoFileManagerActivity;com.haolianluo.video.Main"
+        dup="true"
+        image="video.png"
+        pkgname="com.mediatek.videoplayer;com.huaqin.videoplayer;com.android.music;com.sec.android.app.videoplayer;com.android.VideoPlayer;com.android.gallery3d;com.zte.videoplayer;com.samsung.everglades.video;com.android.video;com.zte.videoplayer_ZTE;com.htc.album;com.cooliris.media;com.leadcore.videoplayer;com.tyd.android.app.videogallery;com.htc.china.videos;com.miui.video;com.lenovo.videoplayer;com.vivo.video;com.lge.media;com.android.yepvieoplayer;com.baidu.videoplayer;com.mediatek.mtkvideoplayer;com.lge.videoplayer;com.ontim.videoplayer;com.wise.movie_player;com.yulong.android.videoplayer;edu.ccut2;com.lewa.player;com.google.android.videos;com.tydtech.videogallery;oms.video;com.kphone.videoplayer;cn.com.zte.videoplayer;com.android.hplayer;com.pantech.app.skymovie;com.amoi.videoplayer;com.meizu.media.video;com.zte.video;com.cooliris.video.media;com.lifevibes.lgevideoplayer;com.android.rtspplayer;com.android.skymobi;com.pekall.videoplayer;android.rk.RockVideoPlayer;com.android.gallery;com.mediatek.movielist;com.mz.video;com.hisense;com.oppo.video;com.aliyun.video;com.kttech.video;com.pantech.app.movie;com.foxlink.videoplayer;com.etonnj;com.five.videoplayer;com.moly.videoplayer;com.motorola.gallery;com.lenovo.gemini.videoplayer;com.um.mobiletheatre;com.letv.android.client;com.digitalaria.videoplayer;com.android.videos;android.rk.multi.RkMulitPlayer;com.access.videobrowser;android.rk.TchipRockVideoPlayer;com.martini.player;com.sony.walkman.mediaplayers.wm;com.sunmiyo.video;fx.cdrc.videoplayer;com.easyandroid.music;com.gionee.video;com.mediatek.filemanager;com.haolianluo.video" />
+
+    <icon
+        name="相机"
+        componentName="com.android.camera.CameraEntry;com.android.camera.CameraLauncher;com.mediatek.camera.Camera;com.android.camera.Camera;com.sec.android.app.camera.Camera;com.android.hwcamera;com.oppo.camera.activity.CameraActivity;com.sonyericsson.android.camera.CameraActivity;com.android.hwcamera.Camera;com.hike.camera.ui.CameraActivity;com.baidu.camera.Camera;com.miui.camera.Camera;com.motorola.Camera.Camera;com.android.lgecamera.CameraLoading;com.android.camera.CameraActivity;com.android.camera.CameraPre;com.android.camera;com.oppo.camera.OppoCamera;com.lge.camera.CameraApp;com.arcsoft.camera.ArcCamera;com.moblynx.cameraics.Camera;com.lge.camera.CamLoading;com.motorola.camera.Camera;com.arcsoft.camera.LaunchActivity;com.android.camera.KbStyle2Camera;com.k_phone.camera.Camera;zte.com.cn.camera.Camera;com.pantech.app.skycamera.Camera;com.android.jrdcamera.CameraLauncher;com.android.camera.CameraLoading;com.android.camera.IfHdmi;com.tcl.mid.android.camera.Camera;com.android.cameraswitch.CameraSwitch;com.asus.camera.CameraApp;com.android.camera.LaunchCamera;jp.co.sharp.android.camera.stillimagecamera.Camera;com.sec.android.app.latin.launcher.camera.Launcher;com.oppo.camera.CameraLauncher;com.pantech.app.camera.Camera;com.motorola.CameraF.Camera;com.android.camera.DefaultCameraActivity;com.android.camerastub.CameraStub;com.android.camera.jh.Camera;com.android.camera.ArcCamera;com.android.camera.camera;com.ucamera.ucam.launcher.LauncherActivity;com.android.cameraswitch.LaunchCamera;com.intel.camera22.Camera;com.nanogrid.camera.Camera;com.android.lgecamera.ArcCamera;com.fihtdc.camera.Camera;com.android.inccamera.Camera;com.lge.camera.CameraMain;com.lge.camera.CameraAppLauncher;com.android.camera.Cartoon;com.marginz.camera.CameraLauncher;com.intel.camera.Camera;com.android.camera.PrepareCamera;com.tyd.camera.Camera;com.fihtdc.camera.CameraLauncher;com.skymobi.iphonecamera.Camera;com.ti.omap3.android.camera.Camera"
+        dup="true"
+        image="camera.png"
+        pkgname="com.android.camera;com.android.gallery3d;com.mediatek.camera;com.sec.android.app.camera;com.oppo.camera;com.sonyericsson.android.camera;com.google.android.gallery3d;com.android.hwcamera;com.hike.camera;com.baidu.camera;com.miui.camera;com.motorola.Camera;com.android.lgecamera;com.lge.camera;com.arcsoft.camera;com.moblynx.cameraicsplus;com.motorola.camera;com.k_phone.camera;zte.com.cn.camera;com.pantech.app.skycamera;com.jrdcom.android.gallery3d;com.google.android.camera;com.tcl.mid.android.camera;com.android.cameraswitch;com.asus.camera;jp.co.sharp.android.camera;com.lewa.gallery3d;com.sec.android.app.latin.launcher.camera;com.oppo.gallery3d;com.pantech.app.camera;com.motorola.CameraF;com.android.camerastub;com.lenovo.leos.lenovocamera;com.android.camera.jh;com.google.android.gallery3d2of1;com.ucamera.ucam;com.intel.camera22;com.nanogrid.camera;com.fihtdc.camera;com.android.inccamera;com.intel.camera;com.tyd.camera;com.fihtdc.gallery3d;com.skymobi.iphonecamera;com.ti.omap3.android.camera" />
+
+    <icon
+        name="图库"
+        componentName="com.android.gallery3d.app.GalleryActivity;com.htc.album.AlbumMain.ActivityMainDropList;com.android.gallery3d.app.Gallery;com.cooliris.media.Gallery;com.android.camera.GalleryPicker;com.sec.android.gallery3d.app.Gallery;com.miui.gallery.app.Gallery;com.bbk.media.Gallery;com.htc.album.AlbumMain.ActivityMainCarousel;com.sonyericsson.gallery.Gallery;com.sonyericsson.album.MainActivity;com.oppo.gallery3d.app.Gallery;com.hike.gallery3d.app.Gallery;com.motorola.cgallery.Dashboard;com.moblynx.galleryics.app.Gallery;com.arcsoft.mediagallery.TabletPhoto;com.baidu.gallery3d.app.Gallery;com.android.gallery.ui.MainActivity;com.htc.album.AlbumTabSwitchActivity;com.oppo.cooliris.media.Gallery;com.unicooliris.media.Gallery;zte.com.cn.gallery3d.app.Gallery;com.sec.android.gallery3d.app.MediaFlow;com.jrdcom.android.gallery3d.app.Gallery;com.htc.album.CollectionsActivity;com.android.sec.gallery3d.app.Gallery;com.moscooliris.media.Gallery;com.flikie.wallpapers.gallery.Gallery;com.coolgallery.media.Gallery;com.android.gallery3d.app.LewaGalleryActivity;com.aliyun.photocenter.GalleryShortCutActivity;com.sec.android.app.latin.launcher.gallery.Launcher;com.aliyun.gallery.GalleryShortCutActivity;com.android.gallery3d.app.IskinGallery;com.ucamera.ugallery.ImageGallery;com.intel.android.gallery3d.app.Gallery;com.baidu.camera.GalleryPicker;com.android.gallery3d.main.MyGalleryActivity;com.skymobi.gallery.GalleryPicker;com.digitalaria.gallery.FXGallery;com.song.ui.BucketListActivity;com.tyd.gallery.GalleryPicker;com.fihtdc.gallery3d.app.Gallery;com.baidu.gallery3D.media.Gallery;com.android.gallery3d.vivo.GalleryTabActivity"
+        dup="true"
+        image="gallery.png"
+        pkgname="com.htc.album;com.android.gallery3d;com.cooliris.media;com.android.gallery;com.sec.android.gallery3d;com.miui.gallery;com.bbk.media;com.sonyericsson.gallery;com.google.android.gallery3d;com.sonyericsson.album;com.oppo.gallery3d;com.hike.gallery3d;com.motorola.blurgallery;com.moblynx.galleryics;com.arcsoft.mediagallery;com.baidu.gallery3d;com.oppo.cooliris.media;com.mideatek.media;com.unicooliris.media;zte.com.cn.gallery3d;com.jrdcom.android.gallery3d;com.android.sec.gallery3d;com.moscooliris.media;com.flikie.wallpapers.gallery;com.coolgallery.media;com.lewa.gallery3d;com.sec.android.app.latin.launcher.gallery;com.aliyun.image;com.lenovo.leos.photoplayer;com.google.android.gallery3d2of1;com.ucamera.ucam;com.lenovo.gemini.photoplayer;com.intel.android.gallery3d;com.baidu.gallery;com.skymobi.gallery;com.digitalaria.gallery.avatar3;com.song;com.tyd.gallery;com.fihtdc.gallery3d;com.baidu.gallery3D.media" />
+
+    <icon
+        name="设置"
+        componentName="com.android.settings.framework.activity.HtcSettings;com.android.settings.Settings;com.android.settings.GnSettingsTabActivity;com.android.settings.MiuiSettings;com.android.settings.SettingsEMUI;com.android.settings.SettingsTabActivity;com.android.settings.SettingsSelect;com.android.settings.SettingsTab;com.android.settings.HWSettings;com.android.settings.OppoSettings;com.oppo.settings.OppoSettings;com.android.settings.SystemActivity;com.android.settings.LewaSettings;com.pantech.app.skysettings.SKYSettings;com.android.bro.MainActivity;com.android.settings.SettingsMain;com.motorola.blur.setup.SetupInfoActivity;com.android.settings.MainEntry;com.android.settings.SettingsTabStyle;com.android.settings.SettingsTabAcitvity;com.android.settings.TabSettings;com.android.settings.iphone.IphoneSettings;com.android.settings.SettingsMiui;com.android.settings.MainSetting;com.dianxinos.settings.MainActivity;com.android.settings.MiTabs;com.sec.android.app.latin.launcher.settings.Launcher;net.suckga.iSettingsFree.MainActivity;com.oppo.settings.SettingsActivity;com.android.settings.aliyun.AliSettingsMain;com.android.settings.miui.MiuiSettings;com.android.settings.TabbedSettings;com.android.settings.AphoneSettings;com.android.settings.MacSettings;com.android.settings.tabsettings.TabSettingActivity;com.android.settings.TransmitActivity;com.android.settings.SettingsActivity;com.ion.setting.MainTabActivity;com.mq.fdialog.MainActivity;com.android.settings.MainActivityTab"
+        dup="true"
+        image="settings.png"
+        pkgname="com.android.settings;com.pantech.app.skysettings;com.android.bro;com.motorola.blur.setup;com.sec.android.app.latin.launcher.settings;net.suckga.iSettingsFree;com.ion.setting;com.mq.fdialog" />
+
+    <icon
+        name="计算器"
+        componentName="com.huaqin.mycalculator.HQCalculatorActivity;com.android.calculator2.Calculator;com.sec.android.app.popupcalculator.Calculator;com.android.bbkcalculator.Calculator;com.sec.android.app.calculator.Calculator;com.tyd.calculator.AdvancedCalulator;com.android.calculator2.CalculatorActivity;com.android.calculator.Calculator;com.pantech.app.calculator.SkyEngCalculator;com.smartisanos.calculator.Calculator;com.android.kptCalculator.CalculatorActivity;com.android.calculatorsun.Calculator;com.tencent.calculator.HelloWorldActivity;com.pekall.calculator.Calculator;com.android.calculator2.AsxCalculator;com.android.calculator2.AdvancedCalulator;jp.co.sharp.android.calc.CalculatorActivity;com.pantech.app.skyengcalculator.SkyEngCalculator;com.hskj.iphonecalculator.Calculator;com.ynlh.jsq.Jsq;com.aedesign.iphonecalculator.Calculator;com.apextechnology.calculations.MainActivity;com.cooguo.iphonecalculator.Calculator;com.lenovo.calculator.Calculator;com.android.calculator2.Calculator2;my.android.calc.MainActivity;com.android2.calculator3.Calculator;com.android.calculator4.Calculator;com.skymobi.samsung.calculator.Calculator;com.android2.calculator3.Calculator-Dark;com.fullprocalcapp.SciCalcActivity;com.leon.iphonecalculator.Calculator;com.easyandroid.calculator2.Calculator;com.baidu.calculator2.Calculator;com.android.calculator2.Calculator-Dark;com.android.calculator3.Calculator;com.kttech.calculator.Calculator;com.sma.calculator.Calculator"
+        dup="true"
+        image="calculator.png"
+        pkgname="com.huaqin.mycalculator;com.android.calculator2;com.sec.android.app.popupcalculator;com.android.bbkcalculator;com.sec.android.app.calculator;com.tyd.calculator;com.android.calculator;com.pantech.app.skyengcalculator;com.smartisanos.calculator;com.android.kptCalculator;com.android.calculatorsun;com.tencent.calculator;com.pekall.calculator;jp.co.sharp.android.calc;com.hskj.iphonecalculator;com.pantech.app.calculator;com.ynlh.jsq;com.aedesign.iphonecalculator;com.apextechnology.calculations;com.cooguo.iphonecalculator;com.lenovo.calculator;my.android.calc;com.android2.calculator3;com.android.calculator4;com.skymobi.samsung.calculator;com.fullprocalcapp;com.leon.iphonecalculator;com.easyandroid.calculator2;com.baidu.calculator2;com.android.calculator3;com.kttech.calculator;com.sma.calculator" />
+
+    <icon
+        name="时钟"
+        componentName="com.htc.android.worldclock.WorldClockTabControl;com.android.deskclock.DeskClock;com.lenovomobile.clock.Clock;com.sec.android.app.clockpackage.ClockPackage;yulong.xtime.ui.main.XTimeActivity;com.android.clock.Clock;com.android.BBKClock.Timer;com.android.deskclock.AlarmClock;com.sec.android.app.worldclock.activity.HomeMainActivity;zte.com.cn.alarmclock.AlarmClock;com.android.deskclock.DeskClockTabActivity;com.android.deskclock.AlarmsMainActivity;com.android.alarmclock.AlarmClock;com.huaqin.worldclock.WorldClock;com.ty.clock.WorldClockActivity;com.android.WorldTime.WorldTime;com.leadcore.clock.Clock;com.android.main.TabsActivity;com.sonyericsson.organizer.Organizer;com.sonyericsson.organizer.Organizer_WorldClock;com.sonyericsson.organizer.deskclock.DeskClock;com.baidu.baiduclock.BaiduClock;com.android.worldclock.WorldClockActivity;com.lenovo.clock.Clock;com.lge.clock.Clock;com.android.deskclock.newtime.NewTimeActivity;com.ty.clock.MainActivity;com.lge.clock.DefaultAlarmClockActivity;com.android.deskclock.TabDetails;com.ontim.clock.ClockApp;com.lge.clock.AlarmClockActivity;com.android.deskclock.DeskClockMainActivity;com.android.deskclock.MainActivity;com.android.deskclock.shlyclock.SHLYClockTabActivity;com.android.alarmclock.Clock;com.motorola.blur.alarmclock.AlarmClock;com.android.deskclock.TimesTabActivity;com.sec.android.app.clockpackage.alarm.Alarm;com.huaqin.hqclocktools.DeskClockEntryActivity;zte.com.cn.alarmclock.MyTabActivity;com.android.deskclock.ClockActivity;com.android.alarmclock.ClockActivity;com.hisense.timetools.TimeToolsMainActivity;com.android.deskclock.MultiClockTab;com.smartisanos.clock.activity.ClockActivity;com.android.deskclock.MyTabActivity;com.yzsc.deskclock.DeskClock;com.etonmobile.main.EtonClockActivity;com.sunmontech.deskclock.main.TabsActivity;com.jrdcom.timetool.TimeToolActivity;org.outsource.alarmtable.AlarmTable;com.pekall.clockset.ClockTabActivity;com.android.ghong.GhongDeskClockActivity;com.android.deskclock.ClockProjActivity;jp.co.sharp.android.timerapps.TimerAppsActivity;com.android.mideskclock.DeskClockTabActivity;com.agold.deskclocks.AgoldFragmentTabs;com.android.deskclock.IphoneDeskClock;com.android.launcher2.EsurfacingAlarm;com.android.deskclock.Main;com.android.deskclock.DeskClockGroupActivity;com.aedesign.deskclock.DeskClockGroupActivity;com.sec.android.app.latin.launcher.alarmclock.Launcher;com.android.deskclock2.SamsungDeskClock;com.oppo.alarmclock.AlarmClock;com.pantech.app.clock.ClockLauncher;com.android.DeskClock.ClockActivity;com.pekall.clockset.ClockSet;com.desay.android.alarmclock.AlarmClock;com.desay.clock.DesayClockActivity;com.curvefish.android.deskclock.DeskClock;com.zte.deskclock.AlarmClockActivity;com.lge.alarm.Super_Clock;com.byd.newclock.EditDateTimeActivity;com.android.deskclock.DeskClockActivity;com.digitalaria.clock.MainActivity;com.android.deskclock.InitTab;com.android.deskclock.ClockTabBar;com.huaqin.hqclocktools.WorldClockEntryActivity;com.alioooop.myclock2.Main;com.cyw.app.tools.Tools;com.android.worldclock.TYClock;com.iworks.clock.tabwidget.ClockTabWidget;com.app.worldwatch.WorldWatchWidgetConfigure;com.sec.android.app.worldclock.activity.WCMain;com.android.deskclock.ClockTabActivity;com.android.deskclock.MyTimerTableActivity;com.android.deskclock.WorldClockActivity;com.easyandroid.clock.Clock;com.sunmontech.deskclock.jason.TabTest;com.asus.asusclock.deskclock.DeskClock;com.metek.clock.ClockActivity"
+        image="clock.png"
+        pkgname="com.htc.android.worldclock;com.android.deskclock;com.lenovomobile.deskclock;com.sec.android.app.clockpackage;com.yulong.android.xtime;com.android.BBKClock;com.sec.android.app.worldclock;zte.com.cn.alarmclock;com.android.alarmclock;com.huaqin.worldclock;com.ty.clock;com.android.WorldTime;com.leadcore.clock;com.android.superdeskclock;com.sonyericsson.organizer;com.baidu.baiduclock;com.android.worldclock;com.lenovo.deskclock;com.lge.clock;com.google.android.deskclock;com.moblynx.clockjbplus;com.ontim.clock;com.motorola.blur.alarmclock;com.huaqin.hqclocktools;com.smartisanos.clock;com.yzsc.deskclock;com.etonmobile.alarm;com.sunmontech.deskclock.jason.alarmclock;org.outsource.alarmtable;com.pekall.clockset;com.android.clock;jp.co.sharp.android.timerapps;com.android.mideskclock;com.android.launcher;com.aedesign.deskclock;com.sec.android.app.latin.launcher.alarmclock;com.android.deskclock2;com.oppo.alarmclock;com.android.DeskClock;com.jrdcom.timetool;com.desay.android.alarmclock;com.desay.clock;com.curvefish.android.deskclock;com.zte.deskclock;com.lge.alarm;com.byd.newclock;com.digitalaria.clock;com.alioooop.myclock2;com.cyw.app.tools;com.iworks.clock;com.app.worldwatch;com.moblynx.clockics;com.easyandroid.clock;com.sunmontech.deskclock;com.asus.asusclock;com.metek.clock" />
+
+    <icon
+        name="日历"
+        componentName="com.htc.calendar.LaunchActivity;com.android.calendar.AllInOneActivity;com.android.calendar.LaunchActivity;com.android.calendar.MonthActivity;com.yulong.android.calendar.ui.base.LaunchActivity;com.bbk.calendar.MainActivity;com.lenovo.app.Calendar.MonthUI;com.htc.calendar.CalendarActivityMain;com.android.apple.calendar.LaunchActivity;com.htc.calendar.CalendarCarouselActivity;com.android.calendar.activity.CalendarActivity;com.when.android.calendar365.CalendarMain;com.chocolate.calendar.LaunchActivity;com.when.android.calendar365.vpublic.CalendarMain;com.lenovo.app.Calendar.MonthActivity;com.android.slcalendar.LaunchActivity;com.android.calendar.MainActivity;com.android.yzsc.calendar.AllInOneActivity;com.android.calendar.CalendarTabActivity;com.c35.mtd.calendar.activity.SwitchActivity;com.android.calendar2.AllInOneActivity;com.asus.calendar.watchcalendar.WatchCalendarActivity;com.android.app.calendar.CalendarActivity;qualwin.android.calendar.LaunchActivity;com.sec.android.app.latin.launcher.calendar.Launcher;com.android.calendar.LaunchActivity1;com.scliang.srl.MainAct;com.desay.hef.main.ChinaCalendarActivity;archermind.calendar.ui.CalendarActivity;com.android.calendar.LaunchActivityNew;com.znzn.apps.zcalendar.activity.ASwitcher;com.android.calendar.JumpActivity;since2006.apps.chineselunar.ChineseLunar;com.exuan.ecalendar.ECalendarActivity"
+        image="calendar.png"
+        pkgname="com.google.android.calendar;com.bbk.calendar;com.android.calendar;com.android.calendar.LaunchActivity;com.htc.calendar;com.htc.calendar.LaunchActivity;com.android.calendar.LaunchActivity" />
+
+    <icon
+        name="下载"
+        componentName="com.android.providers.downloads.ui.DownloadList;com.android.providers.downloads.ui.DownloadList;com.android.providers.downloads.ui.DownloadsListTab;com.oppo.browser.downloads.ui.DownloadListUI;com.android.providers.downloads.ui.DownloadPagerActivity;com.android.providers.downloads.ui.DownloadTabActivity;com.android.providers.downloads.ui.GnDownloadTabActivity;com.sec.android.app.latin.launcher.download.Launcher;com.android.providers.downloads.ui.DownloadListUI"
+        dup="true"
+        image="download.png"
+        pkgname="com.android.providers.downloads.ui;com.android.providers.downloads.ui;com.sec.android.app.latin.launcher.download;com.android.providers.downloads" />
+
+    <icon
+        name="广播"
+        componentName="com.htc.fm.FMRadio;com.mediatek.FMRadio.FMRadioActivity;com.longcheer.fmradio.FMRadio;com.marvell.fmradio.MainActivity;com.lenovo.leos.fmradio.RadioActivity;com.broadcom.bt.app.fm.rx.FmRadio;com.samsung.app.fmradio.FmRadioPlaybackActivity;com.quicinc.fmradio.FMRadio;com.sec.android.app.fm.MainActivity;com.sec.android.app.fmradio.MainActivity;com.miui.fmradio.FMRadioMain;com.huawei.android.FMRadio.FMRadioMainActivity;com.fihtdc.fmradio.FMRadio;com.sonyericsson.fmradio.FMRadioActivity;com.thunderst.radio.Radio;com.htc.fm.activity.FMRadioMain;com.sonyericsson.fmradio.ui.FmRadioActivity;com.thunderst.radio.FMPlay;com.baidu.fm.FMRadio;com.htc.fm.ap.activity.FMRadioMain;com.lenovo.fm.RadioActivity;com.quicinc.fmradio.MainActivity;oms.fmradio.FMRadioActivity;com.motorola.fmradio.FMPlayer;zte.com.cn.fmradio.FMRadio;com.fmradio.FMRadioActivity;com.acer.android.FMRadio.FMRadioMain;com.quicinc.fmradio.LoadingDialog;com.application.FM.FmMain;com.miui.fmradio.FMRadioActivity;com.broadcom.bt.app.fm.FmLauncher;com.ti.fmrxapp.FmRxApp;com.pekall.fmradio.FMRadio;com.lge.fmradio.IntroActivity;com.henglv.android.fmradio.FMRadioMain;net.kindroid.fm.FMEntryView;com.asus.android.fmradio.FMRadioMain;com.lge.fmradio.FmRadioActivity;com.brighterwireless.fmradio.FMRadioActivity;com.android.simplefmapp.SimpleFMApp;com.hmct.fmradio.FMRadioActivity;sp.android.fm.radio.FMRadio;com.fihtdc.fmradio.FMRadioActivity;com.jrdcom.fmradio.ui.FMActivity;com.ragtek.fm.RagtekFMActivity;com.hymost.fm.ui.FMRadio;com.broadcom.bt.app.fm.rx.fmradio;RadioPad.all.Welcome;com.mediatek.FMRadio.FM;com.miui.fmradio.FmRadioActivity;com.lenovo.leos.fm.FmMainActivity;com.sim.fm.ui.FMRadio;com.mediatek.FMRadio.LewaFMRadioActivity;com.thunderst.radio.FMRadioMainActivity;com.sony.walkman.fmapp.FM;com.sim.fm.MainActivity;com.sunmiyo.radio.activity.MainActivity;com.cellon.radio.FmPlayerActivity2;com.ti.fmapp.FmRxApp;com.jrdcom.fm.FmRadio;com.caf.fmradio.FMRadio;com.quicinc.fmradio.FMTransmitterActivity"
+        dup="true"
+        image="fm.png"
+        pkgname="com.htc.fm;com.mediatek.FMRadio;com.longcheer.fmradio;com.marvell.fmradio;com.lenovo.leos.fmradio;com.broadcom.bt.app.fm;com.samsung.app.fmradio;com.quicinc.fmradio;com.sec.android.app.fm;com.sec.android.app.fmradio;com.miui.fmradio;com.huawei.android.FMRadio;com.fihtdc.fmradio;com.sonyericsson.fmradio;com.thunderst.radio;com.baidu.fm;com.lenovo.fm;oms.fmradio;com.motorola.fmradio;zte.com.cn.fmradio;com.fmradio;com.acer.android.FMRadio;com.application.FM;com.ti.fmrxapp;com.pekall.fmradio;com.lge.fmradio;com.henglv.android.fmradio;net.kindroid.fm;com.asus.android.fmradio;com.brighterwireless.fmradio;com.android.simplefmapp;com.hmct.fmradio;sp.android.fm;com.jrdcom.fmradio;com.ragtek.fm;com.hymost.fm.ui;RadioPad.all;com.lenovo.leos.fm;com.sim.fm.ui;com.lewa.FMRadio;com.sony.walkman.fmapp;com.sim.fm;com.sunmiyo.radio.activity;com.cellon.radio;com.ti.fmapp;com.jrdcom.fm;com.caf.fmradio" />
+
+    <icon
+        name="搜索"
+        componentName="com.baidu.searchbox.SearchActivity;com.android.quicksearchbox.SearchActivity;com.google.android.googlequicksearchbox.SearchActivity;com.servo.search.ui.ServoSearchActivity;com.lenovo.lenovosearch.SearchActivity;com.android.quicksearchbox.SearchTabActivity;com.nubia.zquicksearchbox.SearchActivity;com.lewa.search.LewaSearchActivity;com.google.android.maps.PlacesActivity;com.baidu.searchbox.SearchActivity;oms.search.ui.SearchActivity;ownhere.google.android.maps.PlacesActivity;com.android.quicksearchbox.QuickSearchBox;com.android.motoquicksearchbox.SearchActivity;com.iworks.multisearch.MultiSearch"
+        dup="true"
+        image="search.png"
+        pkgname="com.baidu.searchbox_samsung;com.android.quicksearchbox;com.google.android.googlequicksearchbox;com.servo.search;com.lenovo.lenovosearch;com.nubia.zquicksearchbox;com.lewa.search;uavana.gmaps;com.baidu.searchbox;oms.search;ownhere.google.android.apps.maps;com.android.motoquicksearchbox;com.iworks.multisearch" />
+
+    <icon
+        name="电子邮件"
+        componentName="com.htc.android.mail.MailListTab;com.android.email.activity.Welcome;com.android.email.activity.EmailActivity;com.htc.android.mail.MultipleActivitiesMain;com.lge.email.activity.AccountList;com.lge.email.activity.ActEmailStarter;com.chocolate.email.activity.Welcome;com.lge.email.ui.setupwizard.Welcome;com.motorola.blur.email.mailbox.ViewFolderActivity;com.android.email.activity.EmailUsers;com.sec.android.app.latin.launcher.email.Launcher;jp.co.sharp.android.messaging.box.activity.Launcher;com.android.email.activity.IphoneWelcome;com.android.email.activity.IphoneEmailWelcome;com.android.mails.activity.Welcome;com.android.email.activity.mail;com.aliyun.mobile.email.activity.Welcome;com.motorola.blur.email.mailbox.MailListActivity"
+        image="email.png"
+        pkgname="com.htc.android.mail;com.android.email;com.lenovo.email;com.motorola.motoemail;com.lge.email;com.borqs.email;com.chocolate.email;com.motorola.blur.email;com.google.android.email;com.sec.android.app.latin.launcher.email;jp.co.sharp.android.messaging;com.android.mails;com.aliyun.mobile.email" />
+
+    <icon
+        name="导航"
+        image="GPS.png"
+        pkgname="com.google.android.apps.maps;com.autonavi.xmgd.navigator;com.autonavi.xmgd.navigator.phone.samsung.gt.i9300" />
+
+    <icon
+        name="录音"
+        dup="true"
+        componentName="com.htc.soundrecorder.SoundRecorderBG;com.android.soundrecorder.SoundRecorder;com.android.speechrecorder.SpeechRecorderActivity;com.sec.android.app.voicerecorder.VoiceRecorderMainActivity;com.yulong.android.soundrecorder.CP_SoundRecorder;com.sec.android.app.voicerecorder.VoiceRecorder;com.android.bbksoundrecorder.SoundRecorder;oppo.multimedia.soundrecorder.RecorderActivity;com.android.soundrecorder.MzRecorderActivity;com.android.soundrecorder.SoundRecorderNormal;com.baidu.soundrecorder.SoundRecorder;com.motorola.soundrecorder.SoundRecorder;com.android.soundrecorder.LewaSoundRecordMainActivity;com.android.kptsxsoundrecorder.SoundRecorder;com.android.soundrecorder2.SoundRecorder2;com.nubia.soundrecorder.SoundRecorderBrowserActivity;com.lge.voicerecorder.VoiceRecorder;com.oppo.soundrecorder.RecorderActivity;com.lenovo.soundrecorder.SoundRecorder;com.android.soundrecorder.SoundRecorderMianView;com.lge.soundrecorder.SoundRecorder;com.lge.fmradio.FmRadio;com.motorola.motofmradio.FMPlayer;com.android.fm.radio.FMRadio;com.demo.android.fmradio.FMRadio;com.nubia.quicinc.fmradio.FMRadio;com.android.FMUI.FMUIActivity;com.motorola.fmradio.FMRadioMain;com.quicinc.fmplayer.FMRadio;com.android.soundrecorder.RecorderActivity;oms.soundrecorder.SoundRecorder;net.micode.soundrecorder.SoundRecorder;cn.zte.recorder.SoundRecorder;com.acer.android.acersoundrecorder.AcerSoundRecorder;com.k_phone.soundrecorder.SoundRecorder;com.android.soundrecorder.IphoneSoundRecorder;com.android.soundrecorder.AsusRecorder;com.pantech.app.pvm.PVMRecording;jp.co.sharp.android.voicerecorder.VoiceRecorderMainActivity;com.oem.fmradio.FMRadioMain;com.android.soundrecorder.SingleTaskRecorder;com.pantech.app.pvm2.Activity.Recoding_Activity;com.android.soundrecorder.RecordListTab;com.tct.soundrecorder.TctSoundRecorder;com.pekall.voicerecorder.VoiceRecorder;com.sonyericsson.androidapp.recorder.Recorder;com.yulong.android.soundrecorder.cp_soundrecorder;hymost.navy.VoiceRecorder.VoiceRecorder;com.leos.soundrecorder.SoundRecorderActivity;com.beartool.mediarecorder.SoundRecorder;com.noahedu.application.soundrecorder.SoundRecorder;com.leos.soundrecorder.SoundRecorder;com.sec.android.app.voicenote.main.VNMainActivity;com.record.micdroid.SplashScreen;com.pjw.atr.AtrActivity;com.android.soundrecorder.SoundRecorderLauncher;com.woodrecorder.MainWindowActivity;net.legend.soundrecorder.SoundRecorder;com.android.voicerecorder.VoiceRecorder;com.android.voicerecorder.SoundRecorder"
+        pkgname="com.htc.soundrecorder;com.android.soundrecorder;com.android.speechrecorder;com.sec.android.app.voicerecorder;com.yulong.android.soundrecorder;com.android.bbksoundrecorder;oppo.multimedia.soundrecorder;com.baidu.soundrecorder;com.motorola.soundrecorder;com.android.kptsxsoundrecorder;com.android.soundrecorder2;com.nubia.soundrecorder;com.lge.voicerecorder;com.oppo.soundrecorder;com.lenovo.soundrecorder;com.lge.soundrecorder;com.lge.fmradio;com.motorola.motofmradio;com.android.fm;com.demo.android.fmradio;com.nubia.quicinc.fmradio;com.android.FMUI;com.motorola.fmradio;com.quicinc.fmplayer;oms.soundrecorder;net.micode.soundrecorder;cn.zte.recorder;com.acer.android.acersoundrecorder;com.k_phone.soundrecorder;com.pantech.app.pvm;jp.co.sharp.android.voicerecorder;com.oem.fmradio;com.pantech.app.pvm2;com.tct.soundrecorder;com.pekall.voicerecorder;com.sonyericsson.androidapp.recorder;hymost.navy.VoiceRecorder;com.leos.soundrecorder;com.beartool.mediarecorder;com.noahedu.application.soundrecorder;com.sec.android.app.voicenote;com.record.micdroid;com.pjw.atr;com.woodrecorder;net.legend.soundrecorder;com.android.voicerecorder" 
+        image="record.png"/>
+    <icon
+        name="词典"
+        image="dict.png"
+        pkgname="com.diotek.diodict3.phone.samsung.chn;cn.motech.Dictionary" />
+
+    <icon
+        name="文件管理"
+        image="folder.png"
+        componentName="com.mediatek.filemanager.FileManagerOperationActivity;com.huaqin.filemanager.FileManager;com.lenovo.FileBrowser.FileBrowserActivity;com.sec.android.app.myfiles.MainActivity;com.yulong.android.filebrowser.activity.MainActivity;com.lenovo.leos.filebrowser.ui.FileBrowser;com.yulong.android.filebrowser.activity.FileBrowserActivity;com.android.filemanager.FileManagerActivity;com.sec.android.app.myfiles.Myfiles;zte.com.cn.filer.FilerActivity;com.gionee.filemanager.FileExplorerTabActivity;com.mediatek.filemanager.FileManagerActivity;com.android.fileexplorer.FileExplorerTabActivity;com.huawei.hidisk.Main;com.oppo.filemanager.FileBrowser;com.meizu.filemanager.managefile.FileManagerActivity;com.fihtdc.filemanager.FileBrowser;com.android.filemanager.FileManager;org.openintents.filemanager.FileManagerActivity;com.mediatek.filemanager.FileExplorerTabActivity;android.dopod.FileManager.dopodFileManager;ty.com.android.filebrowser.FileBrowser;com.baidu.resmanager.filemanager.ui.ProfileActivity;com.m0narx.fileexplorer.main;com.htc.htccnfilemanager.htccnFileManager;ty.com.android.filebrowser.FileSystemActivity;com.lenovo.FileBrowser.activities.FileBrowserMain;com.gionee.filemanager.GnBootActivity;com.softwinner.explore.Main;com.motorola.filemanager.FileManager;com.android.qrdfileexplorer.QRDFileExplorer;com.oppo.filemanager.Main;com.mobile.app.filemanager.FileExplorerTabActivity;com.android.filebrowser.MyFile;com.huaqin.filemanager.FileManagerOperationActivity;com.lenovo.FileBrowser.FileBrowser;com.lge.filemanager.view.LaunchActivity;com.oppo.filemanager.FileManagerMainActivity;com.motorola.FileManager.FileManagerActivity;com.mobile.mycloud.CategoryActivity;com.lewa.filemanager.FileManagerMainActivity;com.hufeng.filemanager.FileManagerTabActivity;com.ontim.filemanager.activity.FileManagerActivity;org.openintents.cmfilemanager.FileManagerActivity;com.uniscope.filemanager.FileManagerOperationActivity;com.lewa.app.filemanager.ui.FileActivity;com.motorola.filemanager.MainFileManagerActivity;com.app.FileManager.FileManagerActivity;com.fb.FileBrower.FileBrower;oms.filemanager.FMMainListActivity;net.micode.fileexplorer.FileExplorerTabActivity;com.kphone.filemanager.FileManagerActivity;com.chocolate.filemanager.MainEntry;com.hufeng.filemanager.MainActivity;com.hisense.FileManager.Activity.FileManager;com.motorola.FileManager.FileManager;com.cyanogenmod.filemanager.activities.NavigationActivity;gn.com.android.filemanager.MyTabActivity;com.android.fileexplorer.activity.FileExplorerTabActivity;com.hisense.FileManager.Activity.ClassifyFileManager;com.android.mifileexplorer.FileExplorerTabActivity;com.henglv.FileManager.FileManagerActivity;org.chivin.myfile.MainActivity;com.baidu.resmanager.filemanager.ui.MainActivity;com.android.xmifileexplorer.FileExplorerTabActivity;com.tcl.File_Manager.File_Manager;com.android.huamobile.filemanager.FileManagerActivity;com.pekall.filemanager.FileManagerStorageActivity;com.asus.filemanager.activity.FileManagerActivity;com.ghong.beyond.filemanager.FileManager;com.qual.activity.ControlSDActivity;com.broadcom.btk.filemanager.FileManager;com.mediatek.filemanager.tinnoui.TinnoUIFileManager;com.uniscope.filemanager.FileManagerActivity;jp.co.sharp.android.cm.main.view.MainStartActivity;com.android.filebrowser.FileManagerActivity;cn.mobgo.filego.FileGo;com.brighter.MainActivity;com.sec.android.app.latin.launcher.myfiles.Launcher;com.android.FileManager.Activity.FileManager;com.aliyun.filemanager.FileListActivity;com.puff.fileexplorer.FileExplorerTabActivity;com.jrdcom.filemanager.FileBrowserActivity;com.fihtdc.filemanager.FileManagerEnhance;com.pekall.filemanager.FileManagerActivity;com.framework.main.Main;com.lezo.filemanager.FileExplorerTabActivity;com.tencent.FileManager.FileManager;com.lenovo.leos.filebrowser.FileBrowser;com.baidu.resmanager.filemanager.ui.MainViewActivity;com.endstarter.android.app.filemanager.FileManagerActivity;com.cellon.filemanager.FileMgrTabActivity;com.rhmsoft.fm.FileManager;com.huawei.filemanager.ui.FileManagerMain;com.android.qcfile.QCFileManager;com.noahedu.application.fi
+leexplorer.FileExplorer;com.feixun.filemanager.fileManagerList;com.nexes.manager.Main;net.android.filemanager.FileExplorerTabActivity;com.signaltech.fileexplorer.ui.MainActivity;com.shendu.filemanage.FileManager;com.qs.android.fileex.ExplorerActivity;com.sprd.fileexplorer.activities.FileExploreActivity;com.toshiba.filemanager.FileManagerActivity;com.mediatek.filemanager.TwFileOperationActivity;com.jxkj.filemanager.FileManager;com.fihtdc.filemanager.FileManager;com.motorola.filemanager.activity.FileManagerActivity;com.nollec.filemanager.FMTabActivity;com.android.APKTools.APKTools;com.ianyi.filemanager.ui.FileManager;xcxin.filexpertaliyun.FileLister;com.hmct.FileManager.Activity.ClassifyFileManager;com.jrdcom.filemanager.FileManagerActivity;com.hll.fileexplorer.view.FileExplorerTabActivity;com.pantech.filemanager.MainView;com.ebensz.filemanager.activity.HomeActivity;org.EDL.myfile.MainActivity;net.goso.fileexplorer.FileExplorerTabActivity"
+        dup="true"
+        pkgname="com.mediatek.filemanager;com.huaqin.filemanager;com.lenovo.FileBrowser;com.sec.android.app.myfiles;com.yulong.android.filebrowser;com.lenovo.leos.filebrowser;com.android.filemanager;zte.com.cn.filer;com.gionee.filemanager;com.android.fileexplorer;com.huawei.hidisk;com.oppo.filemanager;com.meizu.filemanager;com.fihtdc.filemanager;org.openintents.filemanager;android.dopod.FileManager;ty.com.android.filebrowser;com.baidu.resmanager.filemanager;com.m0narx.fileexplorer;com.htc.htccnfilemanager;com.softwinner.explore;com.motorola.filemanager;com.android.qrdfileexplorer;com.mobile.app.filemanager;com.android.filebrowser;com.lge.filemanager;com.motorola.FileManager;com.mobile.mycloud;com.lewa.filemanager;com.hufeng.filemanager;com.ontim.filemanager;org.openintents.cmfilemanager;com.uniscope.filemanager;com.lewa.app.filemanager;com.app.FileManager;com.fb.FileBrower;oms.filemanager;net.micode.fileexplorer;com.kphone.filemanager;com.chocolate.filemanager;com.hisense.FileManager.Activity;com.cyanogenmod.filemanager;gn.com.android.filemanager;com.android.mifileexplorer;com.henglv.FileManager;org.chivin.myfile;com.android.xmifileexplorer;com.tcl.File_Manager;com.android.huamobile.filemanager;com.pekall.filemanager;com.asus.filemanager;com.ghong.beyond.filemanager;com.qual.activity;com.broadcom.btk.filemanager;jp.co.sharp.android.cm;cn.mobgo.filego;com.brighter;com.sec.android.app.latin.launcher.myfiles;com.android.FileManager.Activity;com.aliyun.filemanager;com.puff.fileexplorer;com.jrdcom.filemanager;com.kenny.KFileManager;com.lezo.filemanager;com.tencent.FileManager;com.endstarter.android.app.filemanager;com.cellon.filemanager;com.rhmsoft.fm;com.huawei.filemanager;com.android.qcfile;com.noahedu.application.fileexplorer;com.feixun.filemanager;com.nexes.manager;net.android.filemanager;com.signaltech.fileexplorer;com.shendu.filemanage;com.qs.android.fileex;com.sprd.fileexplorer;com.toshiba.filemanager;com.jxkj.filemanager;com.nollec.filemanager;com.android.APKTools;com.ianyi.filemanager;xcxin.filexpertaliyun;com.hmct.FileManager.Activity;com.hll.fileexplorer;com.pantech.filemanager;com.ebensz.filemanager;org.EDL.myfile;net.goso.fileexplorer" />
+
+    <icon
+        name="情景模式"
+        componentName="com.android.settings.profilemode.AudioProfileSettings"
+        dup="true"
+        image="scene.png"
+        pkgname="com.android.settings" />
+
+    <icon
+        name="便笺"
+        image="Memo.png"
+        pkgname="com.sprdroid.note" />
+
+    <icon
+        name="天气"
+        componentName="com.cooee.widget.samweatherclock;com.cooee.widget.samweatherclock.MainActivity"
+        dup="true"
+        image="weather.png"
+        pkgname="com.cooee.widget.samweatherclock" />
+
+    <icon
+        name="主题选择"
+        componentName="com.coco.theme.themebox.MainActivity"
+        dup="true"
+        image="theme.png"
+        pkgname="com.cool.launcher;coco.zhutixuanze;com.iLoong.base.themebox" />
+
+    <icon
+        name="一键换装"
+        componentName="com.iLoong.launcher.theme.ThemeChangeActivity"
+        dup="true"
+        image="yjhz.png"
+        pkgname="com.cooee.unilauncher" />
+    <!-- <icon name="字体" dup="true" pkgname="com.cooee.unilauncher" componentName="com.iLoong.launcher.theme.FontActivity" image="font.png"/> -->
+
+    <icon
+        name="掌阅书城"
+        image="iReader.png"
+        pkgname="com.chaozh.iReaderFree15" />
+
+    <icon
+        name="百度地图"
+        image="baiduMap.png"
+        pkgname="com.baidu.BaiduMap" />
+
+    <icon
+        name="百度搜索"
+        image="baiduSearch.png"
+        pkgname="com.baidu.searchbox" />
+
+    <icon
+        name="WLAN"
+        componentName="com.mediatek.op01.plugin.Op01WifisettingsActivity"
+        image="wlan.png"
+        pkgname="com.mediatek.op01.plugin" />
+
+    <icon
+        name="搜狗输入法"
+        image="sougouInput.png"
+        pkgname="com.sohu.inputmethod.sogou" />
+
+    <icon
+        name="待办事项"
+        image="todos.png"
+        pkgname="com.mediatek.todos" />
+
+    <icon
+        name="安卓市场"
+        componentName="com.uucun50000110.android.cms.activity.MarketLoginAndRegisterActivity"
+        image="androidMarket.png"
+        pkgname="com.uucun50000110.android.cms" />
+
+    <icon
+        name="360卫士"
+        componentName="com.qihoo360.mobilesafe.ui.index.AppEnterActivity"
+        image="360Guard.png"
+        pkgname="com.qihoo360.mobilesafe" />
+
+    <icon
+        name="SIM卡应用"
+        image="SIMToolkit.png"
+        pkgname="com.mediatek.StkSelection" />
+
+	<icon
+	    name="微信"
+	    image="weixin.png"
+	    pkgname="com.tencent.mm" />
+
+	<icon
+	    name="新浪微博"
+	    image="since.png"
+	    pkgname="com.sina.weibo" />
+
+	<icon
+	    name="我的收藏"
+	    image="myfavorite.png"
+	    pkgname="com.mediatek.myfavorite" />
+
+	<icon
+	    name="应用商店"
+	    image="market.png"
+	    pkgname="com.huaqin.market" />
+
+	<icon
+	    name="网络助手"
+	    image="networkassistant.png"
+	    pkgname="com.hq.networkassistant" />
+
+	<icon
+	    name="记事本"
+	    image="notes.png"
+	    pkgname="com.mediatek.notebook" />
+
+	<icon
+	    name="一键清理"
+	    image="yjql.png"
+	    pkgname="com.example.taskmanageractivity" />
+
+	<icon
+	    name="腾讯视频"
+		componentName="com.tencent.qqlive.activity.WelcomeActivity"
+	    image="tencentVideo.png"
+	    pkgname="com.tencent.qqlive" />
+
+	<icon
+	    name="百度手机助手"
+		componentName="com.tencent.qqlive.activity.WelcomeActivity"
+	    image="baduAssistant.png"
+	    pkgname="com.baidu.appsearch" />
+
+	<icon
+	    name="腾讯新闻"
+		componentName="com.tencent.news.activity.SplashActivity"
+	    image="tencentNews.png"
+	    pkgname="com.tencent.news" />
+
+	<icon
+	    name="腾讯QQ"
+		componentName="com.tencent.mobileqq.activity.SplashActivity"
+	    image="tencentQQ.png"
+	    pkgname="com.tencent.mobileqq" />
+
+	<icon
+	    name="QQ浏览器"
+		componentName="com.tencent.mtt.SplashActivity"
+	    image="QQBrowser.png"
+	    pkgname="com.tencent.mtt" />
+</default_layout>
