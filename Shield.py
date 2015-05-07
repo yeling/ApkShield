@@ -3,6 +3,7 @@ import sys
 import xml.dom.minidom
 import codecs
 import shutil 
+import zipfile
 
 def decypt(path):
 	decypt = 'java -jar apktool.jar d -f -o out ' + path
@@ -49,8 +50,14 @@ def copyFile(src):
 	shielddst = '.\\out\\smali\\com\\apk\\shield\\'
 	shutil.rmtree('.\\out\\smali\\')	
 	shutil.copytree(shieldsrc,shielddst)
-	dstapk = '.\\out\\assets\\ex07.apk'
-	shutil.copy(src,dstapk)
+	#dstapk = '.\\out\\assets\\ex07.apk'
+	#shutil.copy(src,dstapk)
+	
+def extractDex(src):
+	zipFile = zipfile.ZipFile(src)
+	dstpath = '.\\out\\assets\\'
+	zipFile.extract('classes.dex',dstpath)
+	shutil.copy(dstpath + 'classes.dex',dstpath + 'ex07.apk')
 		
 #===================================================================================	
 print 'Begin decypt'
@@ -63,16 +70,19 @@ src = args
 #解开apk
 decypt(args)
 #deal xml file
-parseXml();
+parseXml()
 #
-copyFile(src);
-
+copyFile(src)
+#
+extractDex(src)
 #apk打包
 encypt(args)
 #apk签名
 sign(args)
 
-install(src)
+shutil.rmtree('.\\out')	
+
+#install(src)
 
 print 'End decypt'
 print 'End Shield'
