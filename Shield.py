@@ -24,7 +24,8 @@ def install(path):
 	ins = 'adb install -r '+' shield' + path
 	print ins
 	os.system(ins)	
-
+	
+#解析xml文件，增加application
 def parseXml():
 	path = '.\out\AndroidManifest.xml'
 	pathout = '.\out\AndroidManifest.xml'
@@ -44,7 +45,7 @@ def parseXml():
 	writer = codecs.lookup('utf-8')[3](f)
 	tree.writexml(writer, encoding='utf-8')
 	writer.close()
-
+	
 def copyFile(src):	
 	shieldsrc = '.\\ApkShield\\smali\\com\\apk\\shield\\'
 	shielddst = '.\\out\\smali\\com\\apk\\shield\\'
@@ -53,6 +54,7 @@ def copyFile(src):
 	#dstapk = '.\\out\\assets\\ex07.apk'
 	#shutil.copy(src,dstapk)
 	
+#将apk中dex解析出来并且拷贝到对应的目录	
 def extractDex(src):
 	zipFile = zipfile.ZipFile(src)
 	dstpath = '.\\out\\assets\\'
